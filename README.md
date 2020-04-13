@@ -36,9 +36,11 @@ For detailed information on how configuration of plugins works, please refer to 
 ### Defaults
 ```
 ENV["circleci-revision"] = {
+  buildVariable: "CIRCLE_BUILD_NUM",
   separator: '_'
 }
 ```
+The `buildVariable` specifies the environement variable to use to extract the build number. This can be useful if you want your build number to be externally supplied, say from a parent task.
 ## Prerequisites
 
 The following property is expected to be present on the deployment `context` object:
